@@ -27,6 +27,5 @@ def main(profile_path):
     automator.run()
 
 if __name__ == "__main__":
-    # This allows for the optional passing of a custom profile path
     profile_path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_PROFILE_PATH
     main(profile_path)
