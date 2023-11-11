@@ -8,7 +8,7 @@ class WorkspaceAutomator:
     def __init__(self, profile_path=DEFAULT_PROFILE_PATH):
         self.profile = self._load_profile(profile_path)
         self.process_launcher = ProcessLauncher()
-        self.window_manager = WindowManager()
+        self.window_manager = WindowManager(self.process_launcher)
 
     def _load_profile(self, profile_path):
         with open(profile_path, 'r') as f:
