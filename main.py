@@ -16,7 +16,7 @@ class WorkspaceAutomator:
 
     def launch_applications(self):
         for app in self.profile.get("applications", []):
-            self.process_launcher.launch(app)
+            print(f"Processing app configuration: {app}")
             self.window_manager.position_window(app)
 
     def run(self):

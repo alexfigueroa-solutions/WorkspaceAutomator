@@ -8,4 +8,5 @@ class ProcessLauncher:
             command = [app["command"]]
 
         arguments = app.get("arguments", [])
+        print(f"Launching {app['command']}...")  # Debug print
         subprocess.Popen(command + arguments, shell=True)
