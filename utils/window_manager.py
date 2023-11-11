@@ -28,7 +28,7 @@ class WindowManager:
             hwnd = self._get_window_handle(title)
             if hwnd:
                 return hwnd
-            time.sleep(0.5)  # Check every 0.5 seconds
+            time.sleep(0.2)  # Check every 0.5 seconds
         return None
 
     def _get_window_handle(self, title):
@@ -52,7 +52,7 @@ class WindowManager:
         if not is_maximized:
             win32gui.SetWindowPos(hwnd, win32con.HWND_TOP, -32000, -32000, 0, 0, win32con.SWP_SHOWWINDOW)
             print("Window moved off-screen")
-            time.sleep(0.5)
+            time.sleep(0.2)  # Reduced sleep time
 
         # Enumerate monitors and move the window to the desired monitor
         monitors = win32api.EnumDisplayMonitors()
@@ -61,7 +61,7 @@ class WindowManager:
             monitor_area = monitor_info['Monitor']
             win32gui.SetWindowPos(hwnd, win32con.HWND_TOP, monitor_area[0], monitor_area[1], 0, 0, win32con.SWP_SHOWWINDOW)
             print(f"Window moved to monitor {monitor_number}")
-            time.sleep(0.5)
+            time.sleep(0.2)  # Reduced sleep time
         else:
             print("Monitor number out of range")
 
