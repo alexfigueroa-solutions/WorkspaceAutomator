@@ -12,6 +12,7 @@ class WindowManager:
         self.default_wait_time = 2
 
     def position_window(self, app):
+        print(f"Positioning {app['name']}...")  # Debug print
         self.process_launcher.launch(app)
         time.sleep(self.default_wait_time)
         hwnd = self._get_window_handle(app["name"])
@@ -42,6 +43,7 @@ class WindowManager:
 
     def _maximize_window(self, hwnd):
         win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
+
 
 # Main execution logic (not shown here) would create an instance of WorkspaceAutomator
 # and call its run method, similar to what you have in your existing script.
